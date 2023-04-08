@@ -7,6 +7,7 @@ const from = document.querySelector("form")
 const moviesName = document.querySelector("input")
 
 from.onsubmit=(e) =>{
+    document.querySelector("#results").innerHTML= ""
     e.preventDefault()
     fetch("https://api.themoviedb.org/3/search/movie?api_key=3a0c4dd223a8f1dfe67839464bdde91a&language=en-US&query="+moviesName.value+"&page=1&include_adult=false")
     .then((response)=> {return response.json()})
